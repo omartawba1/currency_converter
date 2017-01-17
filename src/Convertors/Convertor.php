@@ -1,6 +1,6 @@
 <?php
 
-namespace CurrencyConverter\Convertors;
+namespace Tawba\CurrencyConverter\Convertors;
 
 interface Convertor
 {

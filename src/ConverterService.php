@@ -1,9 +1,9 @@
 <?php
 
-namespace CurrencyConverter;
+namespace Tawba\CurrencyConverter;
 
-use CurrencyConverter\Services\Connector;
-use CurrencyConverter\Convertors\Google;
+use Tawba\CurrencyConverter\Services\Connector;
+use Tawba\CurrencyConverter\Convertors\Google;
 use ReflectionClass;
 
 class ConverterService

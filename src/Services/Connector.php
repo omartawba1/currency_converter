@@ -1,6 +1,6 @@
 <?php
 
-namespace CurrencyConverter\Services;
+namespace Tawba\CurrencyConverter\Services;
 
 class Connector
 {

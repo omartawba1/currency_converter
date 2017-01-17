@@ -3,7 +3,7 @@
 // Composer autoload
 require_once __DIR__ . '/vendor/autoload.php';
 
-use CurrencyConverter\ConverterService;
+use Tawba\CurrencyConverter\ConverterService;
 
 $from_currency = "USD";
 $to_currency   = "EGP";

@@ -1,8 +1,8 @@
 <?php
 
-namespace CurrencyConverter\Convertors;
+namespace Tawba\CurrencyConverter\Convertors;
 
-use CurrencyConverter\Services\Connector;
+use Tawba\CurrencyConverter\Services\Connector;
 
 class Google implements Convertor
 {
