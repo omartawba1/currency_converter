@@ -4,7 +4,7 @@ namespace CurrencyConverter;
 
 use CurrencyConverter\Services\Connector;
 
-class ConverterController
+class ConverterService
 {
     /**
      * The API base URL "For now it's Google"
@@ -23,7 +23,7 @@ class ConverterController
      * @var string $to_currency
      */
     private $to_currency;
-
+    
     /**
      * The amount that you want to convert to
      * @var float $amount
