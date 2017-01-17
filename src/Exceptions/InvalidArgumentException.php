@@ -1,6 +1,6 @@
 <?php
 
-namespace CurrencyConverter\Exception;
+namespace Tawba\CurrencyConverter\Exception;
 
 /**
  * Class InvalidArgumentException

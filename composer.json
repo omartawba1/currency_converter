@@ -16,7 +16,7 @@
   },
   "autoload": {
     "psr-4": {
-      "CurrencyConverter\\": "src/"
+      "Tawba\\CurrencyConverter\\": "src/"
     }
   }
 }

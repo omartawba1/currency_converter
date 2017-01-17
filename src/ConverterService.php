@@ -1,8 +1,8 @@
 <?php
 
-namespace CurrencyConverter;
+namespace Tawba\CurrencyConverter;
 
-use CurrencyConverter\Services\Connector;
+use Tawba\CurrencyConverter\Services\Connector;
 
 class ConverterService
 {
