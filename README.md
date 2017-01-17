@@ -1,3 +1,8 @@
+## Description
+
+Currency converter package helps you to easily convert any amount from specific currency to another one.
+
+
 ## Installation
 Using Composer :
 
@@ -5,7 +10,14 @@ Using Composer :
 composer install
 ```
 
+Or you can do
+
+```
+composer require tawba/currency-converter
+```
+
 If you don't have composer, you can get it from [Composer](https://getcomposer.org/)
+
 
 ## Run the application
 
