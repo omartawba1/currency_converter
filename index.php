@@ -9,6 +9,6 @@ $from_currency = "USD";
 $to_currency   = "EGP";
 $amount        = 1000;
 
-$converter = new ConverterService($from_currency, $to_currency, $amount);
+$converter = new ConverterService();
 
-echo "<pre>" . $converter->convert() . "</pre>";
+echo "<pre>" . $converter->convert($from_currency, $to_currency, $amount) . "</pre>";
