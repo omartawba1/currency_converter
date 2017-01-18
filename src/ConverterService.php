@@ -2,11 +2,7 @@
 
 namespace Tawba\CurrencyConverter;
 
-use Tawba\CurrencyConverter\Config\Config;
-use Tawba\CurrencyConverter\Services\Connector;
-use Tawba\CurrencyConverter\Converters\Google;
-use Tawba\CurrencyConverter\Converters\Yahoo;
-use ReflectionClass;
+use Tawba\CurrencyConverter\ConverterManager;
 
 class ConverterService
 {
@@ -15,26 +11,27 @@ class ConverterService
      * @var object
      */
     private $driver;
-    
-    /**
-     * The converters
-     * @var array
-     */
-    private $converters;
-    
+
     /**
      * CurrencyConverter constructor.
      *
-     * @param $driver
+     * @param $driver name
      */
     public function __construct($driver = 'google')
     {
-        $this->converters = Config::$drivers;
-        $driver_class     = $this->lookupConverter($driver);
-        $reflection_class = new ReflectionClass($driver_class);
-        $this->driver     = $reflection_class->newInstanceArgs();
+        $this->driver = $this->makeDriver($driver);
     }
-    
+
+    /**
+     * @param $driver
+     *
+     * @return mixed
+     */
+    private function makeDriver($driver)
+    {
+        return ConverterManager::makeByName($driver);
+    }
+
     /**
      * @param $from
      * @param $to
@@ -46,15 +43,4 @@ class ConverterService
     {
         return $this->driver->convert($from, $to, $amount);
     }
-    
-    /**
-     * @param $driver
-     *
-     * @return mixed
-     */
-    private function lookupConverter($driver)
-    {
-        return $this->converters[$driver];
-    }
-    
 }

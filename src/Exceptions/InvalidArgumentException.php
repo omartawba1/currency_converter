@@ -5,7 +5,7 @@ namespace Tawba\CurrencyConverter\Exceptions;
 /**
  * Class InvalidArgumentException
  *
- * @package TripSorter\Exception
+ * @package Tawba\CurrencyConverter
  */
 class InvalidArgumentException extends \InvalidArgumentException
 {
