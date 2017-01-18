@@ -2,7 +2,7 @@
 
 namespace Tawba\CurrencyConverter\Services;
 
-class Connector
+class HttpClient
 {
     /**
      * The API URL
@@ -23,7 +23,7 @@ class Connector
     private $method;
 
     /**
-     * Connector constructor to set the API URL & Headers.
+     * HttpClient constructor to set the API URL & Headers.
      *
      * @param       $url
      * @param       $method
