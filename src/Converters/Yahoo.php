@@ -7,13 +7,13 @@ use Tawba\CurrencyConverter\Services\Connector;
 class Yahoo implements Converter
 {
     /**
-     * The API base URL "For now it's Google"
+     * The API base URL for Yahoo finance webservice
      * @var string
      */
     private $base_url = "http://query.yahooapis.com/v1/public/yql";
     
     /**
-     * Google constructor.
+     * Yahoo constructor.
      */
     public function __construct()
     {

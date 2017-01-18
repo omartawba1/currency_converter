@@ -7,7 +7,7 @@ use Tawba\CurrencyConverter\Services\Connector;
 class Google implements Converter
 {
     /**
-     * The API base URL "For now it's Google"
+     * The API base URL For Google finance webservice
      * @var string
      */
     private $base_url = "http://www.google.com/finance/converter?a=";
