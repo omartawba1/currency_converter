@@ -3,10 +3,10 @@
 namespace Tawba\CurrencyConverter\Exceptions;
 
 /**
- * Class RuntimeException
+ * Class DriverNotFoundException
  *
  * @package Tawba\CurrencyConverter
  */
-class RuntimeException extends \RuntimeException
+class DriverNotFoundException extends \InvalidArgumentException
 {
 }

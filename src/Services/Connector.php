@@ -9,19 +9,19 @@ class Connector
      * @var string $url
      */
     private $url;
-    
+
     /**
      * The API Request Headers
      * @var array $headers
      */
     private $headers;
-    
+
     /**
      * The API method calling
      * @var string $method
      */
     private $method;
-    
+
     /**
      * Connector constructor to set the API URL & Headers.
      *
@@ -35,7 +35,7 @@ class Connector
         $this->headers = $headers;
         $this->method  = $method;
     }
-    
+
     /**
      * Executing the API Call
      *
@@ -53,8 +53,8 @@ class Connector
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $this->method);
         $response = curl_exec($ch);
         curl_close($ch);
-        
+
         return $response;
     }
-    
+
 }
