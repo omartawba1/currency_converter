@@ -3,34 +3,59 @@
 namespace Tawba\CurrencyConverter;
 
 use Tawba\CurrencyConverter\Services\Connector;
-use Tawba\CurrencyConverter\Convertors\Google;
+use Tawba\CurrencyConverter\Converters\Google;
+use Tawba\CurrencyConverter\Converters\Yahoo;
 use ReflectionClass;
 
 class ConverterService
 {
-
+    /**
+     * The driver object "Google, yahoo, ...etc"
+     * @var object
+     */
     private $driver;
+    
+    /**
+     * The converters
+     * @var array
+     */
+    private $converters = [
+        'google' => Google::class,
+        'yahoo'  => Yahoo::class,
+    ];
+    
     /**
      * CurrencyConverter constructor.
      *
-     * @param $from_currency
-     * @param $to_currency
+     * @param $driver
      */
-    public function __construct($driver='google')
+    public function __construct($driver = 'yahoo')
     {
-        $driver_class = $this->lookupConvertor($driver);
-        $r = new ReflectionClass($driver_class);
-        $this->driver = $r->newInstanceArgs();
+        $driver_class     = $this->lookupConverter($driver);
+        $reflection_class = new ReflectionClass($driver_class);
+        $this->driver     = $reflection_class->newInstanceArgs();
     }
-
+    
+    /**
+     * @param $from
+     * @param $to
+     * @param $amount
+     *
+     * @return mixed
+     */
     public function convert($from, $to, $amount)
     {
         return $this->driver->convert($from, $to, $amount);
     }
-
-    private function lookupConvertor($driver)
+    
+    /**
+     * @param $driver
+     *
+     * @return mixed
+     */
+    private function lookupConverter($driver)
     {
-        return ['google' => Google::class ][$driver];
+        return $this->converters[$driver];
     }
-
+    
 }
