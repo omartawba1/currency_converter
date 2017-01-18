@@ -25,6 +25,19 @@ If you don't have composer, you can get it from [Composer](https://getcomposer.o
 php index.php
 ```
 
+## Usage
+
+```
+use Tawba\CurrencyConverter\ConverterService;
+
+$from_currency = "USD";
+$to_currency   = "EGP";
+$amount        = 1000;
+
+$converter = new ConverterService(); // You can pass "google" or "yahoo" as a service API
+echo $converter->convert($from_currency, $to_currency, $amount);
+```
+
 You can test it by changing $from_currency, $to_currency, and $amount that exist inside index.php file
 
 Notice: This package uses Google currency converter API.
