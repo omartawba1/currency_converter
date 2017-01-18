@@ -40,4 +40,4 @@ echo $converter->convert($from_currency, $to_currency, $amount);
 
 You can test it by changing $from_currency, $to_currency, and $amount that exist inside index.php file
 
-Notice: This package uses Google currency converter API.
+Notice: This package uses Google or Yahoo currency converter API.
