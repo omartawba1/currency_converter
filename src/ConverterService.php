@@ -29,7 +29,7 @@ class ConverterService
      *
      * @param $driver
      */
-    public function __construct($driver = 'yahoo')
+    public function __construct($driver = 'google')
     {
         $driver_class     = $this->lookupConverter($driver);
         $reflection_class = new ReflectionClass($driver_class);
