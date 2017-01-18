@@ -2,6 +2,7 @@
 
 namespace Tawba\CurrencyConverter\Converters;
 
+use Tawba\CurrencyConverter\Config\Config;
 use Tawba\CurrencyConverter\Services\Connector;
 
 class Yahoo implements Converter
@@ -10,14 +11,14 @@ class Yahoo implements Converter
      * The API base URL for Yahoo finance webservice
      * @var string
      */
-    private $base_url = "http://query.yahooapis.com/v1/public/yql";
+    private $base_url;
     
     /**
-     * Yahoo constructor.
+     * Yahoo constructor for setting basic data for the webservice.
      */
     public function __construct()
     {
-        // Do nothing for now.
+        $this->base_url = Config::$yahoo['base_url'];
     }
     
     /**

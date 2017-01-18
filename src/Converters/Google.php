@@ -2,6 +2,7 @@
 
 namespace Tawba\CurrencyConverter\Converters;
 
+use Tawba\CurrencyConverter\Config\Config;
 use Tawba\CurrencyConverter\Services\Connector;
 
 class Google implements Converter
@@ -10,14 +11,14 @@ class Google implements Converter
      * The API base URL For Google finance webservice
      * @var string
      */
-    private $base_url = "http://www.google.com/finance/converter?a=";
+    private $base_url;
     
     /**
-     * Google constructor.
+     * Google constructor for setting API base_url.
      */
     public function __construct()
     {
-        // Do nothing for now.
+        $this->base_url = Config::$google['base_url'];
     }
     
     /**

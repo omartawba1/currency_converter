@@ -2,6 +2,7 @@
 
 namespace Tawba\CurrencyConverter;
 
+use Tawba\CurrencyConverter\Config\Config;
 use Tawba\CurrencyConverter\Services\Connector;
 use Tawba\CurrencyConverter\Converters\Google;
 use Tawba\CurrencyConverter\Converters\Yahoo;
@@ -19,10 +20,7 @@ class ConverterService
      * The converters
      * @var array
      */
-    private $converters = [
-        'google' => Google::class,
-        'yahoo'  => Yahoo::class,
-    ];
+    private $converters;
     
     /**
      * CurrencyConverter constructor.
@@ -31,6 +29,7 @@ class ConverterService
      */
     public function __construct($driver = 'google')
     {
+        $this->converters = Config::$drivers;
         $driver_class     = $this->lookupConverter($driver);
         $reflection_class = new ReflectionClass($driver_class);
         $this->driver     = $reflection_class->newInstanceArgs();
