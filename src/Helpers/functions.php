@@ -12,6 +12,18 @@ if (!function_exists('array_get')) {
      */
     function array_get(array $ary, $key, $default = null)
     {
-        return $ary[$key] ?: $default;
+        return !empty($ary[$key]) ? $ary[$key] : $default;
+    }
+}
+
+if (!function_exists('printHelp')) {
+    /**
+     * Print the help text
+     *
+     * @return string
+     */
+    function printHelp()
+    {
+        echo "usage: FIXME!\n";
     }
 }

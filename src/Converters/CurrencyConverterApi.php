@@ -28,7 +28,7 @@ class CurrencyConverterApi extends Converter
         $query    = $from . '_' . $to;
         $url      = $this->base_url . $endpoint .'?' . http_build_query(['q' => $query, 'compact' => 'ultra']);
         $client   = new HttpClient($url);
-        $request_result = $client->run(); // FIXME: This http client is very limit.
+        $request_result = $client->run();
         $json = json_decode($request_result, true);
         $rate = $json[$query];
         return (float) $rate * $amount;

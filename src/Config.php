@@ -4,5 +4,5 @@ namespace Tawba\ConverterService;
 
 class Config
 {
-    //TODO:
+    //TODO: SET UP API CLIENTS DETAILS
 }
