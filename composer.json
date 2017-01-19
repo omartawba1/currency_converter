@@ -17,6 +17,7 @@
   "autoload": {
     "psr-4": {
       "Tawba\\CurrencyConverter\\": "src/"
-    }
+    },
+    "files": ["src/functions.php"]
   }
 }

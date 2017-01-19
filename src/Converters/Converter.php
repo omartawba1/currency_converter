@@ -13,11 +13,9 @@ abstract class Converter
     /**
      * Constructor for setting API base_url.
      */
-    public function __construct($base_url=null)
+    public function __construct($config=[])
     {
-        if($base_url != null) {
-            $this->base_url = $base_url;
-        }
+        $this->base_url = array_get($config, 'base_url', $this->base_url);
     }
 
     /**

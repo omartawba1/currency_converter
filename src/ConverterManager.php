@@ -4,6 +4,7 @@ namespace Tawba\CurrencyConverter;
 
 use Tawba\CurrencyConverter\Converters\Google;
 use Tawba\CurrencyConverter\Converters\Yahoo;
+use Tawba\CurrencyConverter\Converters\CurrencyConverterApi;
 use Tawba\CurrencyConverter\Exceptions\DriverNotFoundException;
 
 class ConverterManager
@@ -13,8 +14,9 @@ class ConverterManager
      * The drivers array
      */
     public static $drivers = [
-        'google' => Google::class,
-        'yahoo'  => Yahoo::class,
+        'google'               => Google::class,
+        'yahoo'                => Yahoo::class,
+        'currency_converter_api' => CurrencyConverterApi::class,
     ];
 
     public static function registerDriver($name, $driverClass)
@@ -32,15 +34,15 @@ class ConverterManager
         return self::$drivers[$name];
     }
 
-    private static function buildConverter($driverClass, $args)
+    private static function buildConverter($driverClass, $config)
     {
         $reflectionClass = new \ReflectionClass($driverClass);
-        return $reflectionClass->newInstanceArgs($args);
+        return $reflectionClass->newInstanceArgs([$config]);
     }
 
-    public static function makeByName($name, $args=[])
+    public static function makeByName($name, $config=[])
     {
         $driverClass = self::findByName($name);
-        return self::buildConverter($driverClass, $args);
+        return self::buildConverter($driverClass, $config);
     }
 }
