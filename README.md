@@ -22,7 +22,8 @@ If you don't have composer, you can get it from [Composer](https://getcomposer.o
 ## Run the application
 
 ```
-php index.php
+php index.php list
+php index.php convert
 ```
 
 ## Usage
